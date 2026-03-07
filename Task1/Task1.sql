@@ -124,8 +124,10 @@ SELECT
 FROM PricePaidData2024;
 
 -- ver numero de linhas (tuplos)
-SELECT FORMAT(COUNT(*), 'N0') AS [2025RowCount] FROM ShortPricePaidData2025
-SELECT FORMAT(COUNT(*), 'N0') AS [2024RowCount]FROM ShortPricePaidData2024
+SELECT FORMAT(COUNT(*), 'N0') AS [2024RowCount] FROM PricePaidData2024;
+SELECT FORMAT(COUNT(*), 'N0') AS [2024RowCount] FROM PricePaidData2025;
+SELECT FORMAT(COUNT(*), 'N0') AS [2025RowCount] FROM ShortPricePaidData2024;
+SELECT FORMAT(COUNT(*), 'N0') AS [2024RowCount] FROM ShortPricePaidData2025;
 
 SELECT TOP 100 * FROM ShortPricePaidData2025
 SELECT TOP 100 * FROM ShortPricePaidData2024
