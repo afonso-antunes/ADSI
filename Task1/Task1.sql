@@ -49,7 +49,7 @@ WITH (
 );
 
 BULK INSERT PricePaidData2024
-FROM 'C:\data\pp-2025.csv'
+FROM 'C:\data\pp-2024.csv'
 WITH (
     FORMAT = 'CSV',
     FIELDQUOTE = '"',
@@ -90,7 +90,7 @@ CREATE TABLE ShortPricePaidData2024 (
     [County] VARCHAR(100)
 );
 
-
+-- inserir os dados
 INSERT INTO ShortPricePaidData2025
 SELECT
     [Transaction unique identifier],
@@ -121,10 +121,11 @@ SELECT
     [Town/City] AS [Town],
     [District],
     [County]
-FROM PricePaidData2025;
+FROM PricePaidData2024;
 
+-- ver numero de linhas (tuplos)
 SELECT FORMAT(COUNT(*), 'N0') FROM ShortPricePaidData2025
 SELECT FORMAT(COUNT(*), 'N0') FROM ShortPricePaidData2024
 
-SELECT TOP 10 * FROM ShortPricePaidData2025
-SELECT TOP 10 * FROM ShortPricePaidData2024
+SELECT TOP 100 * FROM ShortPricePaidData2025
+SELECT TOP 100 * FROM ShortPricePaidData2024
