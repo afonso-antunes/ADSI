@@ -4,7 +4,7 @@ WITH p24 AS (
 		PAON, 
 		street, 
 		[Town/City] as city
-	FROM PricePaidData2024
+	FROM ShortPricePaidData2024
 ),
 p25 AS (
 	SELECT DISTINCT 
@@ -12,7 +12,7 @@ p25 AS (
 	PAON,
 	street,
 	[Town/City] as city
-	FROM PricePaidData2025
+	FROM ShortPricePaidData2025
 )
 SELECT 
 	p24.county,
@@ -39,7 +39,7 @@ FROM (
 		PAON, 
 		street, 
 		[Town/City] as city
-	FROM PricePaidData2024
+	FROM ShortPricePaidData2024
 ) AS p24
 JOIN (
 	SELECT
@@ -47,7 +47,7 @@ JOIN (
 		PAON,
 		street,
 		[Town/City] as city
-	FROM PricePaidData2025
+	FROM ShortPricePaidData2025
 ) AS p25
 ON p24.county = p25.county
 		AND p24.PAON = p25.PAON
@@ -67,11 +67,11 @@ FROM (
         PAON,
         street,
         [Town/City] AS city
-    FROM PricePaidData2024
+    FROM ShortPricePaidData2024
 ) AS p24
 WHERE EXISTS (
     SELECT *
-    FROM PricePaidData2025 p25
+    FROM ShortPricePaidData2025 p25
     WHERE p25.county = p24.county
       AND p25.PAON = p24.PAON
       AND p25.street = p24.street
@@ -90,7 +90,7 @@ FROM (
         PAON,
         street,
         [Town/City] AS city
-    FROM PricePaidData2024
+    FROM ShortPricePaidData2024
     GROUP BY county, PAON, street, [Town/City]
 ) p24
 JOIN (
@@ -99,7 +99,7 @@ JOIN (
         PAON,
         street,
         [Town/City] AS city
-    FROM PricePaidData2025
+    FROM ShortPricePaidData2025
     GROUP BY county, PAON, street, [Town/City]
 ) p25
 ON p24.county = p25.county
@@ -118,8 +118,8 @@ FROM (
         p24.PAON,
         p24.street,
         p24.[Town/City]
-    FROM PricePaidData2024 p24
-    JOIN PricePaidData2025 p25
+    FROM ShortPricePaidData2024 p24
+    JOIN ShortPricePaidData2025 p25
       ON p24.county = p25.county
      AND p24.PAON = p25.PAON
      AND p24.street = p25.street
@@ -134,12 +134,12 @@ FROM (
     SELECT county, PAON, street, [Town/City], COUNT(*) AS c
     FROM (
         SELECT county, PAON, street, [Town/City]
-        FROM PricePaidData2024
+        FROM ShortPricePaidData2024
 
         UNION ALL
 
         SELECT county, PAON, street, [Town/City]
-        FROM PricePaidData2025
+        FROM ShortPricePaidData2025
     ) t
     GROUP BY county, PAON, street, [Town/City]
     HAVING COUNT(*) = 2
@@ -155,13 +155,13 @@ FROM (
     SELECT DISTINCT 
         county,
         HASHBYTES('SHA1', county + PAON + street + [Town/City]) AS property_hash
-    FROM PricePaidData2024
+    FROM ShortPricePaidData2024
 ) p24
 JOIN (
     SELECT DISTINCT 
         county,
         HASHBYTES('SHA1', county + PAON + street + [Town/City]) AS property_hash
-    FROM PricePaidData2025
+    FROM ShortPricePaidData2025
 ) p25
 ON p24.property_hash = p25.property_hash
 GROUP BY p24.county;
@@ -178,7 +178,7 @@ FROM (
 		PAON, 
 		street, 
 		[Town/City] as city
-	FROM PricePaidData2024
+	FROM ShortPricePaidData2024
 
 	INTERSECT
 
@@ -187,7 +187,7 @@ FROM (
 		PAON,
 		street,
 		[Town/City] as city
-	FROM PricePaidData2025
+	FROM ShortPricePaidData2025
 ) as A
 GROUP BY A.county;
 -- Estimated Subtree Cost = 111.351
