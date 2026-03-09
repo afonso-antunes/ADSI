@@ -6,14 +6,14 @@ FROM (
 	SELECT 
 		district, 
 		AVG(CAST(price AS BIGINT)) AS avg_price
-	FROM PricePaidData2024
+	FROM ShortPricePaidData2024
 	GROUP BY district
 ) p24
 JOIN ( 
 	SELECT 
 		district,
 		AVG(CAST(price AS BIGINT)) AS avg_price
-	FROM PricePaidData2025
+	FROM ShortPricePaidData2025
 	GROUP BY district
 ) p25
 ON p24.district = p25.district
@@ -38,14 +38,14 @@ FROM (
 	SELECT 
 		district, 
 		AVG(CAST(price AS BIGINT)) AS avg_price
-	FROM PricePaidData2024
+	FROM ShortPricePaidData2024
 	GROUP BY district
 ) p24
 JOIN ( 
 	SELECT 
 		district,
 		AVG(CAST(price AS BIGINT)) AS avg_price
-	FROM PricePaidData2025
+	FROM ShortPricePaidData2025
 	GROUP BY district
 ) p25
 ON p24.district = p25.district
@@ -63,14 +63,14 @@ FROM (
 	SELECT 
 		district, 
 		AVG(CAST(price AS BIGINT)) AS avg_price
-	FROM PricePaidData2024
+	FROM ShortPricePaidData2024
 	GROUP BY district
 ) p24
 JOIN ( 
 	SELECT 
 		district,
 		AVG(CAST(price AS BIGINT)) AS avg_price
-	FROM PricePaidData2025
+	FROM ShortPricePaidData2025
 	GROUP BY district
 ) p25
 ON p24.district = p25.district
@@ -88,14 +88,14 @@ FROM (
 	SELECT 
 		district, 
 		AVG(CAST(price AS BIGINT)) AS avg_price
-	FROM PricePaidData2024
+	FROM ShortPricePaidData2024
 	GROUP BY district
 ) p24
 JOIN ( 
 	SELECT 
 		district,
 		AVG(CAST(price AS BIGINT)) AS avg_price
-	FROM PricePaidData2025
+	FROM ShortPricePaidData2025
 	GROUP BY district
 ) p25
 ON p24.district = p25.district
@@ -114,14 +114,14 @@ FROM (
 	SELECT 
 		district, 
 		AVG(CAST(price AS BIGINT)) AS avg_price
-	FROM PricePaidData2024
+	FROM ShortPricePaidData2024
 	GROUP BY district
 ) p24
 JOIN ( 
 	SELECT 
 		district,
 		AVG(CAST(price AS BIGINT)) AS avg_price
-	FROM PricePaidData2025
+	FROM ShortPricePaidData2025
 	GROUP BY district
 ) p25
 ON p24.district = p25.district
@@ -140,14 +140,14 @@ FROM (
 	SELECT 
 		district, 
 		AVG(CAST(price AS BIGINT)) AS avg_price
-	FROM PricePaidData2024
+	FROM ShortPricePaidData2024
 	GROUP BY district
 ) p24
 JOIN ( 
 	SELECT 
 		district,
 		AVG(CAST(price AS BIGINT)) AS avg_price
-	FROM PricePaidData2025
+	FROM ShortPricePaidData2025
 	GROUP BY district
 ) p25
 ON p24.district = p25.district
@@ -166,14 +166,14 @@ FROM (
 	SELECT 
 		district, 
 		AVG(CAST(price AS BIGINT)) AS avg_price
-	FROM PricePaidData2024
+	FROM ShortPricePaidData2024
 	GROUP BY district
 ) p24
 JOIN ( 
 	SELECT 
 		district,
 		AVG(CAST(price AS BIGINT)) AS avg_price
-	FROM PricePaidData2025
+	FROM ShortPricePaidData2025
 	GROUP BY district
 ) p25
 ON p24.district = p25.district
